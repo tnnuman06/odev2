@@ -1,4 +1,4 @@
-﻿namespace ödev_oyun
+namespace ödev_oyun
 {
     internal class Program
     {
