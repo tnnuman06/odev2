@@ -4,10 +4,12 @@
     {
         static void Main(string[] args)
         {
-            int hak = 0, sehir;
+            Console.WriteLine("Şehir tahmin oyunumuza hoşgeldiniz.\n Hazırsanız başlayalım.");
+            Console.ReadKey();
+            int hak = 0, sehir, sayac = 5;
             Random rasgele = new Random();
             sehir = rasgele.Next(1, 5);
-            do 
+            do
             {
                 if (sehir == 1)
                 {
@@ -18,11 +20,12 @@
                         hak += 10;
                         Console.WriteLine("Tebrikler");
                         Console.WriteLine($"Skorunuz: {hak}");
-                        Random rasgele2= new Random();
+                        Random rasgele2 = new Random();
                         sehir = rasgele2.Next(2, 5);
                     }
                     else
                     {
+                        sayac--;
                         Console.WriteLine("Yanlış cevap :( Biraz daha düşün al sana bir ipucu\n ...lıyım ezelden");
                     }
                 }
@@ -40,6 +43,7 @@
                     }
                     else
                     {
+                        sayac--;
                         Console.WriteLine("Yanlış cevap :( Biraz daha düşün al sana bir ipucu\n 4 büyüklerde takımı var");
                     }
                 }
@@ -57,6 +61,7 @@
                     }
                     else
                     {
+                        sayac--;
                         Console.WriteLine("Yanlış cevap :( Biraz daha düşün al sana bir ipucu\n Trafik çok yoğun");
                     }
                 }
@@ -74,6 +79,7 @@
                     }
                     else
                     {
+                        sayac--;
                         Console.WriteLine("Yanlış cevap :( Biraz daha düşün al sana bir ipucu\n ...ya ...ya eşin");
                     }
                 }
@@ -89,12 +95,13 @@
                     }
                     else
                     {
+                        sayac--;
                         Console.WriteLine("Yanlış cevap :( Biraz daha düşün al sana bir ipucu\n Bu şehir bi başka Başkent");
                     }
                 }
             }
-            while (hak!=50);
-
+            while (sayac > 0);
+            Console.WriteLine($"{hak}");
         }
     }
 }
